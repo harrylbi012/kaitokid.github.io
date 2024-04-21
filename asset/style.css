@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #7EC4EB;
+  font-family: 'Poppins', sans-serif; /* Set default font */
+  overflow-x: hidden;
+  
+}
+
+nav{
+  display: flex;
+  background-color: #063969;
+  justify-content: space-around;
+  height: 50px;
+  color: azure;
+  align-items: center;
+}
+ 
+nav ul{
+  display: flex;
+  list-style: none;
+  width: 25%;
+  justify-content: space-between;
+  
+
+}
+
+nav .logo{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+}
+nav .logo img{
+  max-width: 100%;
+  height: 30px;
+  margin-top: 20px;
+  
+}
+nav ul li a{
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-decoration: none;
+  color: azure;
+  
+  
+
+}
+nav a:hover{
+  background-color: black;
+}
+
+.menu-toogle{
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toogle span{
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: azure;
+  border-radius: 3px;
+  transition: all 0.5s;
+ 
+
+}
+
+.menu-toogle input{
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -12px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.tembok img.kid {
+  width: 290px;
+  height: auto;
+  align-items: center;
+  padding: 30px 35px;
+  
+  z-index: -1;
+}
+
+
+
+/* hamburger animation*/
+
+.menu-toogle span:nth-child(2){
+  transform-origin: 0 0;
+  
+}
+.menu-toogle span:nth-child(4){
+  transform-origin: 0 100%;
+  
+}
+.menu-toogle input:checked ~ span:nth-child(2){
+  transform: rotate(45deg) translate(-1px, -1px);
+  background-color: azure;
+  
+}
+.menu-toogle input:checked ~ span:nth-child(4){
+  transform: rotate(-45deg) translate(5px, 0px);
+  background-color: azure;
+}
+.menu-toogle input:checked ~ span:nth-child(3){
+  transform: scale(0)
+  
+}
+
+/* responsiv */
+/* ukuran tablet*/
+@media screen and (max-width: 768px) {
+  
+  nav ul{
+    width: 50%;
+    justify-content: space-between;
+  }
+  .tembok .kiri{
+    display: none;
+     
+   }
+   .tembok .kanan{
+     position: relative;
+     width: 30%;
+     height: auto;
+     z-index: -1;
+     
+   }
+   h3{
+    display: none;
+   }
+   .content{
+    display: none;
+   }
+
+}
+
+/* responsiv */
+/* ukuran mobile*/
+@media  (max-width: 576px) {
+  .menu-toogle{
+    display: flex;
+  }
+  .footer .card{
+    display: none;
+  }
+  nav ul{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+  }
+  nav {
+    z-index: 2;
+  }
+  
+ .tembok .kiri{
+   display: none;
+    
+  }
+  .tembok .kanan{
+    position: relative;
+    width: 50%;
+    display: none;
+  }
+
+  .footer{
+    z-index: 1;
+  }
+  .card{
+    z-index: 1;
+    position: absolute;
+
+  }
+  .tembok h2{
+    display: none;
+  }
+
+ 
+  nav ul.slide{
+    transform: translateX(0);
+  }
+}
+  
+
+
+
+
+.footer {
+  background-color: #063969;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer img.logo {
+  float: right;
+  width: 80px;
+  height: auto;
+  align-items: center;
+  padding: 16px 16px;
+}
+
+.card {
+  position: absolute;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-bottom: -5.5px;
+
+  
+}
+
+
+
+.tembok h3 {
+  font-weight: 700;
+  color: #063969;
+  text-align: left;
+  position: relative;
+  left: 70px;
+}
+
+.tembok h2 {
+  
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #063969;
+  text-align: right;
+  position: relative;
+  margin-top: -430px;
+  left: -220px;
+  
+  
+
+}
+.tembok .gambar-bawah {
+  float: right;
+}
+
+
+
+
+
+
+
+
